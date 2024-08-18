@@ -1,0 +1,19 @@
+<section class="align-items-center">
+  <div class="row align-items-center g-4 ">
+  <div class="col-md-3">
+  <img class="w-100" [src]="productDetails.imageCover">
+  </div>
+
+  <div class="col-md-9">
+    <div>
+      <h2 class="font-lg text-main">{{productDetails.title}}</h2>
+      <h5>{{productDetails.description}}</h5>
+      <span>{{productDetails.category.name}}</span>
+
+    </div>
+    <div>
+      <button class="main-btn mt-2 ">Add To Cart</button>
+    </div>
+  </div>
+  </div>
+</section>
