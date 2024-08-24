@@ -1,19 +1,24 @@
-<section class="align-items-center">
-  <div class="row align-items-center g-4 ">
-  <div class="col-md-3">
-  <img class="w-100" [src]="productDetails.imageCover">
-  </div>
-
-  <div class="col-md-9">
-    <div>
-      <h2 class="font-lg text-main">{{productDetails.title}}</h2>
-      <h5>{{productDetails.description}}</h5>
-      <span>{{productDetails.category.name}}</span>
-
+<section class="align-items-center m-5">
+    <div class="row align-items-center g-4 ">
+        <div class="col-md-3">
+            <img class="w-100" [src]="productDetails.imageCover">
+        </div>
+        <div class="col-md-9">
+            <div>
+                <h1 class="">{{productDetails.title}}</h1>
+                <h5>{{productDetails.description}}</h5>
+                <h6>{{productDetails.category.name}}</h6>
+            </div>
+            <div class="d-flex justify-content-between">
+                <h6>{{productDetails.price | currency:"EGP"}}</h6>
+                <h6 class=""><i class="fa-solid fa-star rating-color"></i>
+                    {{productDetails.ratingsAverage}} </h6>
+            </div>
+            <div>
+                <button class="main-btn mt-2 w-100 "
+                    (click)="addProduct(productDetails._id)">Add To
+                    Cart</button>
+            </div>
+        </div>
     </div>
-    <div>
-      <button class="main-btn mt-2 ">Add To Cart</button>
-    </div>
-  </div>
-  </div>
 </section>

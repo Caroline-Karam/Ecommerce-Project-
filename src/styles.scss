@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
+
 $main-color: #0aad0a;
 $light-color: #f0f3f2;
 $shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
@@ -49,4 +53,8 @@ $main-transition: 0.8s;
   font-size: 12px;
 }
 
-
+.product{
+  border: 1px solid $main-color;
+  padding: 5px;
+  border-radius: 5px;
+}
