@@ -13,14 +13,18 @@
             <div>
                 <h4 class="">{{item.product.title}}</h4>
                 <h6 class="text-main mb-2">Price: {{item.price}}</h6>
-                <button class="btn p-0 m-0"><i
-                        class="fa-solid fa-trash-can"></i>Remove</button>
+                <button class="btn p-0 m-0" (click)="removeProduct(item.product._id)">
+                  <i class="fa-solid fa-trash-can"></i>Remove</button>
             </div>
             <div>
-              <button class="btn border-success btn-sm">-</button>
+              <button #btn1 class="btn border-success btn-sm" (click)="changeCount(item.count -1 ,item.product._id ,btn1 , btn2)">-</button>
               <span class="m-2">{{item.count}}</span>
-              <button class="btn border-success btn-sm">+</button>
+              <button #btn2 class="btn border-success btn-sm" (click)="changeCount(item.count +1 ,item.product._id , btn1, btn2)">+</button>
             </div>
         </div>
     </div>
+
+    <button routerLink="/payment" class=" main-btn mt-3">
+      Online Payment <img class="rounded" src="https://iili.io/dh83yfp.png">
+    </button>
 </section>

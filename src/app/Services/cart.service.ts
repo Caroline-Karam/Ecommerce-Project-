@@ -31,4 +31,23 @@ export class CartService {
       }
     )
   }
+
+  removecartItem(prodId: string): Observable<any> {
+    return this._HttpClient.delete<any>(`https://ecommerce.routemisr.com/api/v1/cart/${prodId}`,
+      {
+        headers : this.myToken,
+      }
+    )
+  }
+
+  updateCount(id: string , countNum : number) : Observable<any>{
+    return this._HttpClient.put<any>(`https://ecommerce.routemisr.com/api/v1/cart/${id}`,
+      {
+        count: countNum
+      },
+      {
+        headers : this.myToken,
+      }
+    )
+  }
 }
