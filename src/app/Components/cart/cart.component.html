@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <button routerLink="/payment" class=" main-btn mt-3">
+<button [routerLink]="['/payment', cartDetails._id]" class=" main-btn mt-3">
       Online Payment <img class="rounded" src="https://iili.io/dh83yfp.png">
     </button>
 </section>

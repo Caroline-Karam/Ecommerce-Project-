@@ -7,6 +7,8 @@ import { Category } from '../../Interfaces/category';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { CartService } from '../../Services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { SearchPipe } from "../../search.pipe";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +19,9 @@ import { ToastrService } from 'ngx-toastr';
     RouterLink,
     RouterModule,
     CarouselModule,
-  ],
+    SearchPipe,
+    FormsModule,
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -30,6 +34,7 @@ export class HomeComponent implements OnInit {
 
   productData: any[] = [];
   categoryData: Category[] = [];
+  term : string = '';
 
   ngOnInit(): void {
     this._ProductsService.getProducts().subscribe({
@@ -98,6 +103,8 @@ export class HomeComponent implements OnInit {
     this._CartService.addToCartItem(id).subscribe({
       next: (response) => {
         console.log(response);
+        this._CartService.cartNumber.next(response.numOfCartItems);
+
         this._ToastrService.success(response.message);
       },
     });
